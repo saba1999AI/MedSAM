@@ -1,13 +1,5 @@
 # MedSAM
 
-
-
-### Framework
-
-<p float="left">
-  <img src="assets/MedCLIP-SAMv2.png" width="100%" />
-</p>
-
 ### Sample Segmentation Results
 <p float="left">
   <img src="assets/SegExamples.png" width="100%" />
