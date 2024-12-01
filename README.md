@@ -1,21 +1,6 @@
-# MedCLIP-SAMv2: Towards Universal Text-Driven Medical Image Segmentation
+# MedSAM
 
-**[Health-X Lab](http://www.healthx-lab.ca/)** | **[IMPACT Lab](https://users.encs.concordia.ca/~impact/)** 
 
-[Taha Koleilat](https://tahakoleilat.github.io/), [Hojat Asgariandehkordi](https://scholar.google.com/citations?user=ndXNye4AAAAJ&hl=en), [Hassan Rivaz](https://users.encs.concordia.ca/~hrivaz/), [Yiming Xiao](https://yimingxiao.weebly.com/curriculum-vitae.html)
-
-[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://www.arxiv.org/abs/2409.19483)
-[![Overview](https://img.shields.io/badge/Overview-Read-blue.svg)](#overview)
-[![Datasets](https://img.shields.io/badge/Datasets-Access-yellow.svg)](#datasets)
-[![Demo](https://img.shields.io/badge/Demo-Try-orange.svg)](#colab-demo)
-[![BibTeX](https://img.shields.io/badge/BibTeX-Cite-blueviolet.svg)](#citation)
-
-## Updates
-Due to the many requests we received for releasing the BiomedCLIP fine-tuning code, we have updated the repo and added the necessary code to do so. Follow the steps [here](#how-to-run)
-
-## Overview
-
-_**Abstract:** Segmentation of anatomical structures and pathological regions in medical images is essential for modern clinical diagnosis, disease research, and treatment planning. While significant advancements have been made in deep learning-based segmentation techniques, many of these methods still suffer from limitations in data efficiency, generalizability, and interactivity. As a result, developing precise segmentation methods that require fewer labeled datasets remains a critical challenge in medical image analysis. Recently, the introduction of foundation models like CLIP and Segment-Anything-Model (SAM), with robust cross-domain representations, has paved the way for interactive and universal image segmentation. However, further exploration of these models for data-efficient segmentation in medical imaging is still needed and highly relevant. In this paper, we introduce MedCLIP-SAMv2, a novel framework that integrates the CLIP and SAM models to perform segmentation on clinical scans using text prompts, in both zero-shot and weakly supervised settings. Our approach includes fine-tuning the BiomedCLIP model with a new Decoupled Hard Negative Noise Contrastive Estimation (DHN-NCE) loss, and leveraging the Multi-modal Information Bottleneck (M2IB) to create visual prompts for generating segmentation masks from SAM in the zero-shot setting. We also investigate using zero-shot segmentation labels within a weakly supervised paradigm to enhance segmentation quality further. Extensive testing across four diverse segmentation tasks and medical imaging modalities (breast tumor ultrasound, brain tumor MRI, lung X-ray, and lung CT) demonstrates the high accuracy of our proposed framework._
 
 ### Framework
 
@@ -160,26 +145,5 @@ nnUNetv2_predict_from_folder --dataset DATASET_ID --fold all --input_folder INPU
 nnUNetv2_run_uncertainty_on_fold --proba_dir PATH --raw_path PATH --labels PATH --score_type TYPE --output_pred_path PATH
 ```
 
-## Acknowledgements
 
-Special thanks to [open_clip](https://github.com/mlfoundations/open_clip), [M2IB](https://github.com/YingWANGG/M2IB), [nnUNet](https://github.com/MIC-DKFZ/nnUNet), and [segment-anything](https://github.com/facebookresearch/segment-anything) for making their valuable code publicly available.
 
-## Citation
-
-If you use MedCLIP-SAM, please consider citing:
-
-    @article{koleilat2024medclipsamv2,
-      title={MedCLIP-SAMv2: Towards Universal Text-Driven Medical Image Segmentation},
-      author={Koleilat, Taha and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
-      journal={arXiv preprint arXiv:2409.19483},
-      year={2024}
-    }
-
-    @inproceedings{koleilat2024medclip,
-      title={MedCLIP-SAM: Bridging text and image towards universal medical image segmentation},
-      author={Koleilat, Taha and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
-      booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
-      pages={643--653},
-      year={2024},
-      organization={Springer}
-    }
